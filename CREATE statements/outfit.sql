@@ -4,8 +4,8 @@ CREATE TABLE `outfit` (
   `style` varchar(45) NOT NULL,
   `title` varchar(45) NOT NULL,
   `description` text,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `outfit_created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `outfit_updated_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `has_images_uploaded` tinyint(4) NOT NULL DEFAULT '0',
   `image_url_1` text,
   `image_url_2` text,
@@ -13,4 +13,4 @@ CREATE TABLE `outfit` (
   PRIMARY KEY (`outfit_id`),
   KEY `poster_user_id` (`poster_user_id`),
   CONSTRAINT `outfit_ibfk_1` FOREIGN KEY (`poster_user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
