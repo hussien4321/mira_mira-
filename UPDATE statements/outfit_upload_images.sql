@@ -1,7 +1,7 @@
 UPDATE `test`.`outfit`
 SET
-`has_images_uploaded` = 1,
-`image_url_1` = 'https://viewthevibe.com/wp-content/uploads/2016/08/jazz-cartier-secret-show-roots-canada.jpg',
-`image_url_2` = NULL,
-`image_url_3` = NULL
-WHERE `outfit_id` = 5;
+`has_images_uploaded` = IF(`images_count`=2, 1, `has_images_uploaded`),
+`image_url_2` = 'https://cdn-production.looklive.com/gos_GWy5CNjBCWag8jDsr-4Buxw=/0x0:2200x3300/400x610/2fd7870c-65b5-4526-ae4c-80d234aed9d6'
+WHERE `outfit_id` = 13;
+
+//2 - IMAGE_INDEX_TO_UPDATE

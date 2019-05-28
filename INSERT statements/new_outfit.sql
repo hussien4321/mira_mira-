@@ -2,10 +2,13 @@ INSERT INTO `test`.`outfit`
 (`poster_user_id`,
 `title`,
 `style`,
-`description`)
+`description`,
+`images_count`)
 VALUES
 ('0123456789',
-'my_outfit',
-'streetwear',
-NULL);
+'Another outfit',
+'formalwear',
+'This is DJ Khaled just testing an outfit',
+2);
+
 

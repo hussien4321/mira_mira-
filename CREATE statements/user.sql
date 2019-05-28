@@ -1,7 +1,8 @@
 CREATE TABLE `user` (
   `user_id` varchar(50) NOT NULL,
-  `name` varchar(25) NOT NULL,
-  `profile_pic_url` varchar(256) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `profile_pic_url` text,
   `date_of_birth` datetime NOT NULL,
   `gender_is_male` tinyint(4) NOT NULL,
   `boosts` int(11) NOT NULL DEFAULT '0',
@@ -10,5 +11,6 @@ CREATE TABLE `user` (
   `user_created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `user_updated_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`user_id`),
-  UNIQUE KEY `user_id_UNIQUE` (`user_id`)
+  UNIQUE KEY `user_id_UNIQUE` (`user_id`),
+  UNIQUE KEY `username_UNIQUE` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

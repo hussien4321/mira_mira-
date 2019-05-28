@@ -7,6 +7,5 @@ FROM `test`.`outfit_comment`
 WHERE `comment_id`=`comment_outfit_id`) AS 'comments_count'
 FROM `outfit`, `user` 
 WHERE `poster_user_id`=`user_id` AND 
-`has_images_uploaded` = 1 AND 
-`poster_user_id` <> '111111111' 
+`has_images_uploaded` = 1 
 ORDER BY `outfit_created_at` ASC

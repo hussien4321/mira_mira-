@@ -10,6 +10,7 @@ CREATE TABLE `outfit` (
   `image_url_1` text,
   `image_url_2` text,
   `image_url_3` text,
+  `images_count` int(11) DEFAULT NULL,
   PRIMARY KEY (`outfit_id`),
   KEY `poster_user_id` (`poster_user_id`),
   CONSTRAINT `outfit_ibfk_1` FOREIGN KEY (`poster_user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE
