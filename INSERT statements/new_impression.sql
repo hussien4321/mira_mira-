@@ -1,4 +1,4 @@
-INSERT INTO `test`.`outfit_impression2`
+INSERT INTO `test`.`outfit_impression`
 (`impression_outfit_id`,
 `impression_user_id`,
 `impression_value`)
