@@ -13,5 +13,6 @@ FROM `test`.`outfit_comment`
 WHERE `outfit_id`=`comment_outfit_id`) AS 'comments_count'
 FROM `outfit`, `user` 
 WHERE `poster_user_id`=`user_id` AND 
-`has_images_uploaded` = 1 
+`has_images_uploaded` = 1 AND
+`user_id` = '____USER_ID____'
 ORDER BY `outfit_created_at` DESC

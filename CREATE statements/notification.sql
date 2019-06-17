@@ -2,11 +2,19 @@ CREATE TABLE `notification` (
   `notification_id` int(11) NOT NULL AUTO_INCREMENT,
   `notification_user_id` varchar(50) NOT NULL,
   `notification_type` varchar(50) NOT NULL,
-  `notification_reference_id` varchar(50) NOT NULL,
+  `notification_ref_user_id` varchar(50),
+  `notification_ref_outfit_id` int(11),
+  `notification_ref_comment_id` int(11),
+  `notification_ref_combo` varchar(100) NOT NULL,
   `notification_created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `notification_updated_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`notification_id`),
-  UNIQUE KEY `notification_combo` (`notification_user_id`,`notification_type`,`notification_reference_id`),
+  UNIQUE KEY `notification_combo` (`notification_user_id`,`notification_type`,`notification_ref_combo`),
   KEY `notification_user_id` (`notification_user_id`),
-  CONSTRAINT `notification_imfk_1` FOREIGN KEY (`notification_user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+  KEY `notification_ref_user_id` (`notification_ref_user_id`),
+  KEY `notification_ref_outfit_id` (`notification_ref_outfit_id`),
+  KEY `notification_ref_comment_id` (`notification_ref_comment_id`),
+  CONSTRAINT `notification_user_fk_1` FOREIGN KEY (`notification_user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE,
+  CONSTRAINT `notification_ref_fk_1` FOREIGN KEY (`notification_ref_user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE,
+  CONSTRAINT `notification_ref_fk_2` FOREIGN KEY (`notification_ref_outfit_id`) REFERENCES `outfit` (`outfit_id`) ON DELETE CASCADE,
+  CONSTRAINT `notification_ref_fk_3` FOREIGN KEY (`notification_ref_comment_id`) REFERENCES `outfit_comment` (`comment_id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;

@@ -1,9 +1,15 @@
-REPLACE `test`.`notification`
+INSERT INTO `test`.`notification`
 (`notification_user_id`,
 `notification_type`,
-`notification_reference_id`)
+`notification_ref_user_id`,
+`notification_ref_outfit_id`,
+`notification_ref_comment_id`,
+`notification_ref_combo`)
 VALUES
-('______USER_ID______',
-'_____TYPE_____',
-'____SOME_ID____')
-ON DUPLICATE KEY UPDATE `notification_user_id` = '______USER_ID______'
+('mEHouLXHWmg6zrIzOsefC7hcgOC3',
+'new-comment',
+'SKTFgptZ42TraMADOA2X8O9qVgR2',
+null,
+null,
+'SKTFgptZ42TraMADOA2X8O9qVgR2-null-null') 
+ON DUPLICATE KEY UPDATE `notification_created_at`=CURRENT_TIMESTAMP;
