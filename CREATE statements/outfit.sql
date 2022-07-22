@@ -14,4 +14,4 @@ CREATE TABLE `outfit` (
   PRIMARY KEY (`outfit_id`),
   KEY `poster_user_id` (`poster_user_id`),
   CONSTRAINT `outfit_ibfk_1` FOREIGN KEY (`poster_user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;

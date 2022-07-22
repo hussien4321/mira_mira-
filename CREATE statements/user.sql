@@ -3,9 +3,8 @@ CREATE TABLE `user` (
   `name` varchar(30) NOT NULL,
   `username` varchar(30) NOT NULL,
   `bio` text,
-  `last_seen_notification_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `has_new_feed_outfits` tinyint(4) NOT NULL DEFAULT '0',
   `profile_pic_url` text,
+  `country_code` text,
   `date_of_birth` datetime NOT NULL,
   `gender_is_male` tinyint(4) NOT NULL,
   `boosts` int(11) NOT NULL DEFAULT '0',
@@ -18,4 +17,4 @@ CREATE TABLE `user` (
   UNIQUE KEY `user_id_UNIQUE` (`user_id`),
   UNIQUE KEY `username_UNIQUE` (`username`),
   UNIQUE KEY `notification_token_UNIQUE` (`notification_token`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

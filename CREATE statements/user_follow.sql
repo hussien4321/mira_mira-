@@ -9,4 +9,4 @@ CREATE TABLE `user_follow` (
   KEY `followed_user_id` (`followed_user_id`),
   CONSTRAINT `follow_usfk_1` FOREIGN KEY (`follower_user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE,
   CONSTRAINT `follow_usfk_2` FOREIGN KEY (`followed_user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

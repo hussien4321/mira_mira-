@@ -11,4 +11,4 @@ CREATE TABLE `outfit_impression` (
   KEY `impression_user_id` (`impression_user_id`),
   CONSTRAINT `outfit_imfk_1` FOREIGN KEY (`impression_outfit_id`) REFERENCES `outfit` (`outfit_id`) ON DELETE CASCADE,
   CONSTRAINT `outfit_imfk_2` FOREIGN KEY (`impression_user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
